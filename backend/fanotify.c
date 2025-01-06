@@ -46,7 +46,10 @@ static int fanotify_mark (int __fanotify_fd, unsigned int __flags,
 
 #endif
 
+#if __OHOS__
+#else
 #include <linux/fanotify.h>
+#endif
  
 #define BUF_LEN (10 * (sizeof(struct inotify_event) + NAME_MAX + 1))
 

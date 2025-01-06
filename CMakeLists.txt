@@ -10,7 +10,7 @@ project(fsmon C)
 # set(CMAKE_ANDROID_STL_TYPE c++_shared)
 
 # 开启优化和调试支持
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O3 -g -DHAVE_FANOTIFY=1 -DHAVE_SYS_FANOTIFY=0 -DFSMON_VERSION=\"\\\"1.0.0\\\"\"")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O3 -g -DHAVE_FANOTIFY=1 -DHAVE_SYS_FANOTIFY=1 -DFSMON_VERSION=\"\\\"1.0.0\\\"\"")
 # add_definitions(-DHAVE_FANOTIFY=1 -DFSMON_VERSION="1.0.0")
 # 设置编译输出路径
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -31,10 +31,10 @@ set(SRC_FILES
 message(STATUS "Source files: ${SRC_FILES}")
 
 # 添加可执行目标
-add_executable(fsmon ${SRC_FILES})
+add_executable(fsmon_ohos ${SRC_FILES})
 
 # 添加头文件目录
-target_include_directories(fsmon PRIVATE
+target_include_directories(fsmon_ohos PRIVATE
     ${PROJECT_SOURCE_DIR}
     ${PROJECT_SOURCE_DIR}/backend
     ${PROJECT_SOURCE_DIR}/backend/kdebug
